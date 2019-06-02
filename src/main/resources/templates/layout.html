@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+>
+
+<head>
+    <meta th:include="admin/includes/header::header(title='数据中心')">
+</head>
+<body>
+
+
+<footer style="text-align: center;">
+    <p class="copyright">Copyright © 2008-2015 杭州XX科技有限公司0.0</p>
+    <div th:remove="tag" th:include="admin/includes/footer::footer"></div>
+</footer>
+
+
+<footer layout:fragment="footer" style="display: none;">
+
+</footer>
+
+</body>
+</html>

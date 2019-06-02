@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @SpringBootApplication
 @ComponentScan(basePackages = "com.story")
 @MapperScan(basePackages = "com.story.mapper")
-@EnableTransactionManagement
 public class Application {
     public static void main(String[] args) throws Exception {
         SpringApplication.run(Application.class, args);

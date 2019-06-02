@@ -1,0 +1,18 @@
+<head th:fragment="header">
+    <meta charset="utf-8"/>
+    <meta name="robots" content="nofollow"/>
+    <title th:text="(${title==null}?'':${title}+'-')+'后台管理系统'"></title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+
+    <link th:href="@{/css/reset.css}" rel="stylesheet" data-role="global"/>
+    <link th:href="@{/css/jqGrid/ui.jqgrid.css}" rel="stylesheet"/>
+    <link th:href="@{/css/jqueryui/jquery-ui-1.9.2.custom.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/bee.css}" rel="stylesheet" data-role="global"/>
+    <link th:href="@{/css/main.css}" rel="stylesheet" data-role="global"/>
+    <link th:href="@{/css/formgrid.css}" rel="stylesheet"/>
+    <link th:href="@{/css/zTreeStyle/zTreeStyle.css}" rel="stylesheet"/>
+
+    <!-- END GLOBAL MANDATORY STYLES -->
+</head>

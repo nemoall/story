@@ -3,24 +3,14 @@
 <mapper namespace="com.story.mapper.user.UserMapper">
     <resultMap type="com.story.pojo.po.UserPO" id="baseUserMap">
         <result column="user_uid" property="userUid"/>
-        <result column="user_name" property="userName"/>
-        <result column="archive" property="archive"/>
+        <result column="login_name" property="loginName"/>
+        <result column="password" property="password"/>
+        <result column="role" property="role"/>
     </resultMap>
-    <select id="listUserInfos" resultMap="baseUserMap">
-		select user_uid,user_name,archive
-		FROM ll_user
-		WHERE archive = 1
-	</select>
 
-    <update id="resetArchive">
-        update ll_user
-        set archive = 1
-    </update>
-
-    <update id="updateUserArchive">
-        update ll_user
-        set archive = 0
-        where user_uid = #{userUid}
-    </update>
-
+    <select id="getUserInfo" parameterType="com.story.pojo.dto.SearchUserRequest" resultMap="baseUserMap">
+        select *
+        from tnt_user
+        where login_name = #{loginName} and  password = #{password}
+    </select>
 </mapper>

@@ -1,0 +1,68 @@
+<div class="topnav" id="topnav" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="top-panel">
+        <h1>
+            <a class="logo" href="javascript:;">数据中心</a>
+        </h1>
+        <ul class="top-menu">
+
+            <li class="topModule" th:each="m,mStat:${session.module}">
+                <a class="all-product-link-item" data-event="nav"
+                   th:moduleId="${m.permissionUid}"
+                   th:name="${m.permissionName}"
+                   th:url="|/${m.permissionUid}/left|"
+                ><i class="ico-server"></i><span>[[${m.permissionName}]]</span></a>
+            </li>
+
+        </ul>
+        <ul class="top-menu" style="float: right">
+            <li id="userInfo" data-event="top_submenu" data-menu-type="user"
+                style="position: relative" class="" data-menu-inited="true">
+                <a data-event="nav" data-hot="header.user.center">[[${session.loginUser.userName}]]<i
+                        class="top-menu-arrows"></i></a>
+
+                <div class="drop-down-layer product-service user-profile">
+                    <dl class="service-menu" style="margin:0px;">
+                        <dd th:if="${session.loginUser.admin == true}"><a href="javascript:void(0);">切换用户</a></dd>
+                        <dd><a href="/adminLogin/logout" data-event="logout">退出</a></dd>
+                    </dl>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+<div id="userDialog"></div>
+
+
+<script type="text/javascript">
+
+    function navonclick(name) {
+        $("#container").removeAttr("hidden");
+        $("#summaryPage").attr("hidden", "hidden");
+        $("#wrap").attr("hidden", "hidden");
+    }
+
+    $(function () {
+        $(".topModule a").attr("onclick", "navonclick(this.name);");
+
+        $("#_resetPwd").click(function () {
+            console.log("aaa");
+            $('#userDialog').createDialog({
+                width: 600,
+                height: 250,
+                title: '修改运维人员',
+                url: '/adminUserManage/dispatch?mode=rePwd&id=' + [[${session.loginUser.id}]],
+                buttons: {
+                    "保存": function () {
+                        $("#maintainForm").submit();
+                    },
+                    "关闭": function () {
+                        $(this).dialog("close");
+                    }
+                }
+            });
+        });
+    });
+</script>
+

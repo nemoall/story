@@ -1,21 +1,24 @@
 package com.story.pojo.po;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
+import com.alibaba.fastjson.annotation.JSONField;
 
 /**
  * created by LL on 2019/4/13
  */
 public class UserPO {
+    @JSONField(name = "user_uid")
     private String userUid;
-    private String userName;
-    private Integer archive;
+    @JSONField(name = "login_name")
+    private String loginName;
+    private String password;
+    private String role;
 
-    public Integer getArchive() {
-        return archive;
+    public String getRole() {
+        return role;
     }
 
-    public void setArchive(Integer archive) {
-        this.archive = archive;
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public String getUserUid() {
@@ -26,16 +29,19 @@ public class UserPO {
         this.userUid = userUid;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getLoginName() {
+        return loginName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public String getPassword() {
+        return password;
     }
 
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this);
+    public void setLoginName(String loginName) {
+        this.loginName = loginName;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

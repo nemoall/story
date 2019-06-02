@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.story.mapper.story.StoryMapper">
+    <resultMap type="com.story.pojo.po.StoryPO" id="baseStoryMap">
+        <result column="story_uid" property="storyUid"/>
+        <result column="story_name" property="storyName"/>
+    </resultMap>
+
+    <select id="listStory" resultMap="baseStoryMap">
+        select *
+        from tnt_story
+    </select>
+
+    <select id="countStory" resultType="java.lang.Integer">
+        select count(*)
+        from tnt_story
+    </select>
+
+</mapper>

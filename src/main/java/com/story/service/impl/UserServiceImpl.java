@@ -1,6 +1,7 @@
 package com.story.service.impl;
 
 import com.story.mapper.user.UserMapper;
+import com.story.pojo.dto.SearchUserRequest;
 import com.story.pojo.po.UserPO;
 import com.story.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,17 +18,7 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public List<UserPO> listUserInfos() {
-        return userMapper.listUserInfos();
-    }
-
-    @Override
-    public void resetArchive() {
-        userMapper.resetArchive();
-    }
-
-    @Override
-    public int updateUserArchive(String userUid) {
-        return userMapper.updateUserArchive(userUid);
+    public UserPO getUserInfo(SearchUserRequest request) {
+        return userMapper.getUserInfo(request);
     }
 }

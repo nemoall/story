@@ -1,0 +1,201 @@
+.wrapper {
+    padding: 20px;
+}
+
+.menu-box {
+    border: 1px solid #ebebeb;
+    padding: 20px;
+}
+
+.file-list-box {
+    padding: 0 20px 20px;
+}
+
+.file-top {
+    padding: 0 15px 15px 0;
+}
+
+.file-box {
+    float: left;
+    width: 220px
+}
+
+.file-manager h5 {
+    text-transform: uppercase
+}
+
+.file-manager {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0
+}
+
+.folder-list li {
+    border-bottom: 1px solid #e7eaec;
+    display: block;
+    padding: 5px;
+    color: #666;
+    cursor: pointer;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    -moz-transition: .3s;
+}
+
+.folder-list li:hover {
+    background: rgba(107, 107, 107, .5);
+    color: #fff;
+}
+.folder-list li.active {
+    background: #6b6b6b;
+}
+
+.folder-list li.active,
+.folder-list li.active i {
+    color: #fff;
+}
+
+.folder-list li i {
+    margin-right: 8px;
+    color: #3d4d5d
+}
+
+.category-list li a {
+    color: #666;
+    display: block;
+    padding: 5px 0
+}
+
+.category-list li {
+    display: block
+}
+
+.category-list li i {
+    margin-right: 8px;
+    color: #3d4d5d
+}
+
+.category-list li a .text-navy {
+    color: #1ab394
+}
+
+.category-list li a .text-primary {
+    color: #1c84c6
+}
+
+.category-list li a .text-info {
+    color: #23c6c8
+}
+
+.category-list li a .text-danger {
+    color: #EF5352
+}
+
+.category-list li a .text-warning {
+    color: #F8AC59
+}
+
+.file-manager h5.tag-title {
+    margin-top: 20px
+}
+
+.tag-list li {
+    float: left
+}
+
+.tag-list li.active a {
+    background: #666;
+    color: #fff
+}
+
+.tag-list li a {
+    font-size: 10px;
+    background-color: #f3f3f4;
+    padding: 5px 12px;
+    color: inherit;
+    border-radius: 2px;
+    border: 1px solid #e7eaec;
+    margin-right: 5px;
+    margin-top: 5px;
+    display: block
+}
+
+.file {
+    border: 1px solid #e7eaec;
+    padding: 0;
+    background-color: #fff;
+    position: relative;
+    margin-bottom: 20px;
+    margin-right: 20px
+}
+
+.file .file-del {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 10px;
+
+    background-color: rgba(0, 0, 0, .5);
+    color: #fff;
+}
+
+.file-manager .hr-line-dashed {
+    margin: 15px 0
+}
+
+.file .icon,
+.file .image {
+    height: 100px;
+    text-align: center;
+    overflow: hidden
+}
+
+.file .image img {
+    /*width: 100%;*/
+    height: 100px;
+}
+
+.file-control {
+    color: inherit;
+    font-size: 11px;
+    margin-right: 10px
+}
+
+.file-control.active {
+    text-decoration: underline
+}
+
+.file .icon i {
+    font-size: 70px;
+    color: #dadada;
+    line-height: 100px;
+}
+
+.file .file-name {
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-top: 1px solid #e7eaec;
+    word-break: break-all;
+    height: 28px;
+    overflow: hidden;
+}
+
+.file-name p {
+    display: block;
+    word-break: keep-all;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.file-name small {
+    color: #676a6c
+}
+
+.dialog-uplaod {
+    padding: 20px;
+    text-align: center;
+}

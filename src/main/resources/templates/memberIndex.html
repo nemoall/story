@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" class="ie8" xmlns:layout="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if IE 9]>
+<html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>故事列表</title>
+    <link href="/layui/css/layui.css" rel="stylesheet"/>
+</head>
+<body>
+<div layout:fragment="body" style="margin-left: 20px; padding: 10px;">
+    <table id="storyTable" lay-filter="storyTable" class="layui-hide"></table>
+
+</div>
+</body>
+<script src="/layui/layui.js"></script>
+
+<footer layout:fragment="footer" style="display: none;">
+
+    <script>
+        layui.use(['table', 'tree'], function () {
+            var table = layui.table;
+            var $ = layui.jquery;
+            var laytpl = layui.laytpl;
+            var form = layui.form
+                , layer = layui.layer;
+
+            table.render({
+                elem: '#storyTable'
+                , method: 'post'
+                , url: '/pageStory'
+                , cols: [
+                    [
+                        {
+                            field: "storyUid",
+                            sort: false,
+                            width: '0%',
+                            minWidth: '0%',
+                            space: true,
+                            style: 'display:none'
+                        },
+                        {
+                            field: "storyName",
+                            title: '故事名称',
+                            sort: false,
+                            unresize: true,
+                            fixed: 'center'
+                        }
+                    ]
+                ]
+                , page: false //是否显示分页
+                , where: {"layTable": true}
+                , text: {
+                    none: '暂无相关数据' //默认：无数据。注：该属性为 layui 2.2.5 开始新增
+                }
+                , id: 'storyReload'
+            });
+        });
+
+
+    </script>
+</footer>
+
+
+</html>
